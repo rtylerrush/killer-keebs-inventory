@@ -11,7 +11,17 @@
 
 
 **D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.**
-<br/>
+* about.html added to templates
+* about.html updated line 5: changed title to "About Killer Keebs"
+* about.html added to lines 10-13: added "Our Mission" title along with description of mission statement
+* about.html added to lines 16-19: added "Who We Are" section title with description
+* about.html added to lines 22-28: added "What We Offer" section with list of offerings
+* created AboutController file
+* AboutController lines 6-7: created AboutController function with @Controller
+* AboutController lines 9-11: created @GetMapping for about page
+* mainscreen.html line 20: added button navigation to about page
+* about.html lines 9-10: added button navigation to home page, added thematic break
+* 
 <br/>
 <br/>
 
