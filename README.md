@@ -21,7 +21,7 @@
 * AboutController lines 9-11: created @GetMapping for about page
 * mainscreen.html line 20: added button navigation to about page
 * about.html lines 9-10: added button navigation to home page, added thematic break
-* 
+
 <br/>
 <br/>
 
@@ -30,7 +30,7 @@
 **E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.**
 <br/>
 <br/>
-*BootStrapData.java lines 44-149: Added products and parts to current inventory
+* BootStrapData.java lines 44-149: Added products and parts to current inventory
 
 
 
@@ -40,7 +40,15 @@
 •  Display a message that indicates the success or failure of a purchase.**
 <br/>
 <br/>
-<br/>
+* mainscreen.html line 86: added "Buy Now" button for Products linked to buysuccessful.html
+* Created buysuccessful.html and buyunsuccessful.html for user redirecting 
+* Created BuyProductController for branch logic to determine purchase ability
+* buysuccessful.html lines 8-10: created purchase successful header with button to return to the home page
+* Created BuySuccessfulController with mapping 
+* buyunsuccessful.html lines 8-10: created purchase unsuccessful header with button to return to the home page
+* Created BuyUnsuccessfulController with mapping
+* BuyProductController lines 14-32: created buyProduct method to determine success for purchasing product based on inventory level
+
 
 **G.  Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
