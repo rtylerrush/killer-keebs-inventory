@@ -1,6 +1,7 @@
 package com.example.demo.domain;
 
 import com.example.demo.validators.ValidDeletePart;
+import com.example.demo.validators.ValidPartInventory;
 
 import javax.persistence.*;
 import javax.validation.constraints.Min;
@@ -27,7 +28,17 @@ public abstract class Part implements Serializable {
     @Min(value = 0, message = "Price value must be positive")
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
+
+    @ValidPartInventory()
     int inv;
+
+    //Adding min and max inventory fields
+    @Min(value = 0, message = "Inventory value must be positive")
+    int minInv;
+
+    int maxInv;
+
+
 
     @ManyToMany
     @JoinTable(name="product_part", joinColumns = @JoinColumn(name="part_id"),
@@ -41,6 +52,7 @@ public abstract class Part implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
+
     }
 
     public Part(long id, String name, double price, int inv) {
@@ -48,6 +60,13 @@ public abstract class Part implements Serializable {
         this.name = name;
         this.price = price;
         this.inv = inv;
+    }
+
+    //Constructor for min and max inventory fields
+
+    public Part(int minInv, int maxInv) {
+        this.minInv = minInv;
+        this.maxInv = maxInv;
     }
 
     public long getId() {
@@ -78,9 +97,7 @@ public abstract class Part implements Serializable {
         return inv;
     }
 
-    public void setInv(int inv) {
-        this.inv = inv;
-    }
+    public void setInv(int inv){this.inv = inv;}
 
     public Set<Product> getProducts() {
         return products;
@@ -89,6 +106,14 @@ public abstract class Part implements Serializable {
     public void setProducts(Set<Product> products) {
         this.products = products;
     }
+
+    public int getMinInv() {return minInv;}
+
+    public void setMinInv(int minInv) {}
+
+    public int getMaxInv() {return maxInv;}
+
+    public void setMaxInv(int inv) {this.maxInv = inv;}
 
     public String toString(){
         return this.name;
@@ -106,5 +131,13 @@ public abstract class Part implements Serializable {
     @Override
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
+    }
+
+    public boolean isValid(int inventory){
+        if(inventory >= minInv && inventory <= maxInv){
+            return true;
+        }else{
+            return false;
+        }
     }
 }

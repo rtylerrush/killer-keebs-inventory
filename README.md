@@ -58,7 +58,25 @@
 •  Modify the code to enforce that the inventory is between or at the minimum and maximum value.**
 <br/>
 <br/>
+* Part.Java lines 35-39: Added fields for maximum and minimum inventory values
+* Part.Java lines 65-70: Created constructor method for maxInv and minInv
+* Part.Java lines 110-116: Created getter/setter methods for maxInv and minInv
+* BootStrapData.Java lines 51-52: Added maxInv and minInv to sample inventory for part1
+* BootStrapData.Java lines 71-72: Added maxInv and minInv to sample inventory for part2
+* BootStrapData.Java lines 89-90: Added maxInv and minInv to sample inventory for part3
+* BootStrapData.Java lines 107-108: Added maxInv and minInv to sample inventory for part4
+* BootStrapData.Java lines 125.126: Added maxInv and minInv to sample inventory for part5
+* InhousePartForm.html Lines 25-29: added additional text input fields for min/max inventory
+* OutsourcedPartForm.html Lines 25-30: added additional text input fields for min/max inventory
+* application.properties line 6: renamed persistent storage file to jdbc:h2:file:~/killerkeebs-database
+* Created PartInventoryValidator.Java class
+* Created ValidPartInventory annotation
+* PartInventoryValidator lines 10-29: created methods to validate user input for maxInv field
+* ValidPartInventory lines 10-17: created method for validating user input for maxInv field
+* Part.java line 32: added PartInventoryValidator annotation
 <br/>
+<br/>
+
 
 **H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.

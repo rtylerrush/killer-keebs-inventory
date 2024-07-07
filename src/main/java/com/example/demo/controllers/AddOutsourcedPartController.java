@@ -50,7 +50,4 @@ public class AddOutsourcedPartController {
             repo.save(part);
         return "confirmationaddpart";}
     }
-
-
-
 }

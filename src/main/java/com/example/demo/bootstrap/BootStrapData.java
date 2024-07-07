@@ -48,6 +48,8 @@ public class BootStrapData implements CommandLineRunner {
         part1.setInv(5);
         part1.setPrice(20.0);
         part1.setId(100L);
+        part1.setMaxInv(5);
+        part1.setMinInv(0);
         outsourcedPartRepository.save(part1);
         OutsourcedPart thePart1=null;
         List<OutsourcedPart> outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -66,6 +68,8 @@ public class BootStrapData implements CommandLineRunner {
         part2.setInv(5);
         part2.setPrice(15.0);
         part2.setId(101L);
+        part2.setMaxInv(5);
+        part2.setMinInv(0);
         outsourcedPartRepository.save(part2);
         OutsourcedPart thePart2=null;
         outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -82,6 +86,8 @@ public class BootStrapData implements CommandLineRunner {
         part3.setInv(5);
         part3.setPrice(45.0);
         part3.setId(102L);
+        part3.setMaxInv(5);
+        part3.setMinInv(0);
         outsourcedPartRepository.save(part3);
         OutsourcedPart thePart3=null;
         outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -98,6 +104,8 @@ public class BootStrapData implements CommandLineRunner {
         part4.setInv(5);
         part4.setPrice(10.0);
         part4.setId(103L);
+        part4.setMaxInv(5);
+        part4.setMinInv(0);
         outsourcedPartRepository.save(part4);
         OutsourcedPart thePart4=null;
         outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -114,6 +122,8 @@ public class BootStrapData implements CommandLineRunner {
         part5.setInv(5);
         part5.setPrice(15.0);
         part5.setId(104L);
+        part5.setMaxInv(5);
+        part5.setMinInv(0);
         outsourcedPartRepository.save(part5);
         OutsourcedPart thePart5=null;
         outsourcedParts=(List<OutsourcedPart>) outsourcedPartRepository.findAll();
@@ -133,11 +143,11 @@ public class BootStrapData implements CommandLineRunner {
         //Products
         // Uncomment before submitting
         if(productRepository.count() == 0) {
-        Product keyboard1= new Product("Raptor Pro 88",125.0,15);
-        Product keyboard2= new Product("Eclipse MK-II",180.0,15);
-        Product keyboard3= new Product("Starlight Vanguard",100.0,15);
-        Product keyboard4= new Product("Titan RGB 2.0",100.0,15);
-        Product keyboard5= new Product("Nebula Specter 65",235.0,15);
+        Product keyboard1= new Product("Raptor Pro 88",125.0,5);
+        Product keyboard2= new Product("Eclipse MK-II",180.0,5);
+        Product keyboard3= new Product("Starlight Vanguard",100.0,5);
+        Product keyboard4= new Product("Titan RGB 2.0",100.0,5);
+        Product keyboard5= new Product("Nebula Specter 65",235.0,5);
         productRepository.save(keyboard1);
         productRepository.save(keyboard2);
         productRepository.save(keyboard3);
