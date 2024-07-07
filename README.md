@@ -92,7 +92,8 @@
 **I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.**
 <br/>
 <br/>
-<br/>
+* PartTest.java lines 161-176: created two unit tests for minInv and maxInv
+* PartTest.java lines 178-180: created cleanup method to print success rate at end of tests
 
 **J.  Remove the class files for any unused validators in order to clean your code.**
 <br/>

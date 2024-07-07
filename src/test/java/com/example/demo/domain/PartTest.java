@@ -1,5 +1,6 @@
 package com.example.demo.domain;
 
+import org.junit.jupiter.api.AfterAll;
 import org.junit.jupiter.api.BeforeEach;
 import org.junit.jupiter.api.Test;
 
@@ -155,5 +156,27 @@ class PartTest {
         partIn.setId(1l);
         partOut.setId(1l);
         assertEquals(partIn.hashCode(),partOut.hashCode());
+    }
+
+    @Test
+    void minInv(){
+        int minInv=0;
+        partIn.setInv(minInv);
+        assertEquals(minInv,partIn.getInv());
+        partOut.setInv(minInv);
+        assertEquals(minInv,partOut.getInv());
+    }
+
+    void maxInv(){
+        int maxInv=5;
+        partIn.setInv(maxInv);
+        assertEquals(maxInv,partIn.getInv());
+        partOut.setInv(maxInv);
+        assertEquals(maxInv,partOut.getInv());
+    }
+
+    @AfterAll
+    static void cleanup(){
+        System.out.println("All tests passed!");
     }
 }
