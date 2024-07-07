@@ -1,5 +1,6 @@
 package com.example.demo.controllers;
 
+import com.example.demo.domain.Part;
 import com.example.demo.domain.Product;
 import com.example.demo.repositories.ProductRepository;
 import org.springframework.beans.factory.annotation.Autowired;
@@ -24,6 +25,11 @@ public class BuyProductController {
             if(purchasedProduct.getInv() > 0) {
                 purchasedProduct.setInv(purchasedProduct.getInv() - 1);
                 productRepository.save(purchasedProduct);
+
+                for (Part p : purchasedProduct.getParts()) {
+                    int inv = p.getInv();
+                    p.setInv(inv);
+                }
                 return "buysuccessful";
             }
         }
