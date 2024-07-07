@@ -11,7 +11,7 @@ import java.lang.annotation.Target;
 @Target({ElementType.FIELD, ElementType.PARAMETER})
 @Retention(RetentionPolicy.RUNTIME)
 public @interface ValidPartInventory {
-    String message() default "Inventory amount invalid!";
+    String message() default "Amount exceeds maximum inventory allowed.";
     Class<?> [] groups() default {};
     Class<? extends Payload> [] payload() default {};
 }

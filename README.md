@@ -84,7 +84,9 @@
 •  Display error messages when adding and updating parts if the inventory is greater than the maximum.**
 <br/>
 <br/>
-<br/>
+* Part.java line 36: added @min annotation to minInv
+* ValidPartInventory line 14: Updated error message for input values that exceed maxInv
+* Implemented validators in all domains
 
 
 **I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.**
