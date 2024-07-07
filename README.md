@@ -98,5 +98,6 @@
 **J.  Remove the class files for any unused validators in order to clean your code.**
 <br/>
 <br/>
-<br/>
+* Removed DeletePartValidator from files, no usages
+* Added labels to OutsourcedPartForm, productForm, and InhousePartForm
 
