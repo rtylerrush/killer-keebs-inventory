@@ -17,6 +17,7 @@ import java.util.Set;
  */
 @Entity
 @ValidDeletePart
+@ValidPartInventory(message = "Inventory must be between the minimum and maximum inventory values.")
 @Inheritance(strategy = InheritanceType.SINGLE_TABLE)
 @DiscriminatorColumn(name="part_type",discriminatorType = DiscriminatorType.INTEGER)
 @Table(name="Parts")
@@ -29,15 +30,10 @@ public abstract class Part implements Serializable {
     double price;
     @Min(value = 0, message = "Inventory value must be positive")
 
-    @ValidPartInventory()
-    int inv;
-
-    //Adding min and max inventory fields
     @Min(value = 0, message = "Inventory value must be positive")
+    int inv;
     int minInv;
-
     int maxInv;
-
 
 
     @ManyToMany
@@ -97,7 +93,9 @@ public abstract class Part implements Serializable {
         return inv;
     }
 
-    public void setInv(int inv){this.inv = inv;}
+    public void setInv(int inv) {
+            this.inv = inv;
+        }
 
     public Set<Product> getProducts() {
         return products;
@@ -109,7 +107,7 @@ public abstract class Part implements Serializable {
 
     public int getMinInv() {return minInv;}
 
-    public void setMinInv(int minInv) {}
+    public void setMinInv(int minInv) {this.minInv = minInv;}
 
     public int getMaxInv() {return maxInv;}
 
@@ -131,13 +129,5 @@ public abstract class Part implements Serializable {
     @Override
     public int hashCode() {
         return (int) (id ^ (id >>> 32));
-    }
-
-    public boolean isValid(int inventory){
-        if(inventory >= minInv && inventory <= maxInv){
-            return true;
-        }else{
-            return false;
-        }
     }
 }

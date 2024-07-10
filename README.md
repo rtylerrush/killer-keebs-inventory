@@ -101,3 +101,9 @@
 * Removed DeletePartValidator from files, no usages
 * Added labels to OutsourcedPartForm, productForm, and InhousePartForm
 
+Revisions:  
+
+* PartInventoryValidator lines 16-21: updated isValid function with logic to determine parts between max/min
+* ValidPartInventory line 16: updated error message for when inventory not between max/min
+* Part.java line 20: added ValidPartInventory validator to Part domain
+* Part.Java line 110: updated setMinInv function
