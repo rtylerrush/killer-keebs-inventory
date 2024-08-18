@@ -1,8 +1,38 @@
 
-# WESTERN GOVERNOR UNIVERSITY 
-## D287 – JAVA FRAMEWORKS
+# KILLER KEEBS INVENTORY SYSTEM
 
-**C. Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.**
+
+## Project Overview
+
+This project is a customized inventory management application developed using the Spring Framework with a Java backend and an HTML front-end. The application is designed for a specific customer and includes features tailored to meet their unique requirements.
+
+
+## Project Structure
+
+- **src/main/java**: Contains the Java backend code.
+- **src/main/resources/templates**: Contains the HTML front-end files.
+- **src/test/java**: Contains unit tests.
+
+
+## How to Run the Project
+
+1. Clone the repository from GitHub using the provided URL.
+2. Open the project in IntelliJ IDEA (Ultimate Edition).
+3. Build and run the application using the IDE.
+4. Access the application through your web browser at `http://localhost:8080`.
+
+## Unit Tests
+
+To run the unit tests:
+
+1. Open the `PartTest` class located in `src/test/java/com/example/inventory/PartTest.java`.
+2. Run the tests using the built-in test runner in IntelliJ IDEA.
+
+
+## Changes Made
+
+
+**Customize the HTML user interface for your customer’s application. The user interface should include the shop name, the product names, and the names of the parts.**
 <br/>
 * mainscreen.html updated line 14: Changed title to "Killer Keebs"
 * mainscreen.html updated line 19: Changed header 1 to "Killer Keebs"
@@ -10,7 +40,7 @@
 <br/>
 
 
-**D.  Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.**
+**Add an “About” page to the application to describe your chosen customer’s company to web viewers and include navigation to and from the “About” page and the main screen.**
 * about.html added to templates
 * about.html updated line 5: changed title to "About Killer Keebs"
 * about.html added to lines 10-13: added "Our Mission" title along with description of mission statement
@@ -27,14 +57,14 @@
 
 
 
-**E.  Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.**
+**Add a sample inventory appropriate for your chosen store to the application. You should have five parts and five products in your sample inventory and should not overwrite existing data in the database.**
 <br/>
 <br/>
 * BootStrapData.java lines 44-149: Added products and parts to current inventory
 
 
 
-**F.  Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
+**Add a “Buy Now” button to your product list. Your “Buy Now” button must meet each of the following parameters:
 •  The “Buy Now” button must be next to the buttons that update and delete products.
 •  The button should decrement the inventory of that product by one. It should not affect the inventory of any of the associated parts.
 •  Display a message that indicates the success or failure of a purchase.**
@@ -50,7 +80,7 @@
 * BuyProductController lines 14-32: created buyProduct method to determine success for purchasing product based on inventory level
 * Buy ProductController lines 29-31: added loop to reset part inventory back to original amount after purchase
 
-**G.  Modify the parts to track maximum and minimum inventory by doing the following:
+**Modify the parts to track maximum and minimum inventory by doing the following:
 •  Add additional fields to the part entity for maximum and minimum inventory.
 •  Modify the sample inventory to include the maximum and minimum fields.
 •  Add to the InhousePartForm and OutsourcedPartForm forms additional text inputs for the inventory so the user can set the maximum and minimum values.
@@ -78,7 +108,7 @@
 <br/>
 
 
-**H.  Add validation for between or at the maximum and minimum fields. The validation must include the following:
+**Add validation for between or at the maximum and minimum fields. The validation must include the following:
 •  Display error messages for low inventory when adding and updating parts if the inventory is less than the minimum number of parts.
 •  Display error messages for low inventory when adding and updating products lowers the part inventory below the minimum.
 •  Display error messages when adding and updating parts if the inventory is greater than the maximum.**
@@ -89,13 +119,13 @@
 * Implemented validators in all domains
 
 
-**I.  Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.**
+**Add at least two unit tests for the maximum and minimum fields to the PartTest class in the test package.**
 <br/>
 <br/>
 * PartTest.java lines 161-176: created two unit tests for minInv and maxInv
 * PartTest.java lines 178-180: created cleanup method to print success rate at end of tests
 
-**J.  Remove the class files for any unused validators in order to clean your code.**
+**Remove the class files for any unused validators in order to clean your code.**
 <br/>
 <br/>
 * Removed DeletePartValidator from files, no usages
